@@ -1,0 +1,22 @@
+{
+  "name": "discipline",
+  "version": "1.0.0",
+  "description": "Ferramenta para ajudar professores a melhorar suas aulas",
+  "main": "main.js",
+  "scripts": {
+    "start": "npx electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codecompanybrasil/Discipline.git"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/codecompanybrasil/Discipline/issues"
+  },
+  "homepage": "https://github.com/codecompanybrasil/Discipline#readme",
+  "dependencies": {
+    "electron": "^25.1.0"
+  }
+}
