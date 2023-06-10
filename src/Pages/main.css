@@ -1,0 +1,38 @@
+:root {
+    --blue: #003399;
+    --preto: #000000;
+    --cinza: #666666;
+    --branco: #ffffff;
+    --amarelo: #f29e30;
+    --amarelo-escuro: #e38023;
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("../Fonts/Lato-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Source Sans Pro";
+    src: url("../Fonts/SourceSansPro-Regular.ttf");
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    background-color: var(--blue);
+}
+
+img {
+    user-select: none;
+}
+
+.icon {
+    color: white;
+    margin-right: 5px;
+}
