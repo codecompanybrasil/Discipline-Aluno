@@ -12,7 +12,7 @@ function createWindow () {
         }
     })
 
-    win.loadFile(pageDir + "/Initial/index.html")
+    win.loadFile(pageDir + "/OpcoesTarefa/index.html")
 }
 
 app.whenReady().then(() => {

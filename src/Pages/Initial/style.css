@@ -13,6 +13,7 @@ main {
     font-family: "Source Sans Pro", sans-serif;
     border: 5px solid var(--amarelo-escuro);
     cursor: pointer;
+    user-select: none;
     font-weight: bold;
     box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.801);
     width: 300px;
