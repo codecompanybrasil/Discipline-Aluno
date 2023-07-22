@@ -1,17 +1,18 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
+const pageDir = "src/Pages"
 let win;
 
 function createWindow () {
     win = new BrowserWindow({
-        width: 800,
-        height: 600,
+        width: 1000,
+        height: 800,
         webPreferences: {
             nodeIntegration: true
         }
     })
 
-    win.loadFile('index.html')
+    win.loadFile(pageDir + "/OpcoesTarefa/index.html")
 }
 
 app.whenReady().then(() => {
