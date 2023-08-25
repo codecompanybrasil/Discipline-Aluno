@@ -1,0 +1,32 @@
+.paginacao_button {
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Source Sans 3';
+    font-size: 24px;
+    background-color: white;
+    color: black;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.paginacao {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.interactive_icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
