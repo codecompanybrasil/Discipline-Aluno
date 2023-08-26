@@ -1,12 +1,12 @@
 import "./assets/css/bootstrap-reboot.min.css"
 import "./assets/css/bootstrap-grid.min.css"
 import "./App.css";
-import Paginacao from "./Pages/Avaliacoes/Components/Paginacao";
+import Avaliacoes from "./Pages/Avaliacoes/main";
 
 function App() {
 	return (
 		<>
-			<Paginacao actualPage={1} totalPages={6} />	
+			<Avaliacoes />
 		</>
 	);
 }
