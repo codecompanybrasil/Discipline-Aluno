@@ -1,5 +1,5 @@
 import styles from './Paginacao.module.css'
-import { FirstPage, LastPage } from '../../../Components/DIcons/Icon';
+import { FirstPage, LastPage } from '../../../Components/DcpIcons/Icon';
 
 type PaginacaoButtonProps = {
     isSelected?: boolean,
@@ -47,29 +47,31 @@ function Paginacao({actualPage, totalPages, mudaPaginacao}: PaginacaoProps) {
 
     return (
         <div className={styles.paginacao} >
-            <FirstPage />
-            {actualPage == 1 ? (
-                <>
-                    <PaginacaoButton number={1} isSelected={true} onClick={() => mudaPaginacao(1)} />
-                    <PaginacaoButton number={2} onClick={() => mudaPaginacao(2)} />
-                    <PaginacaoButton number={3} onClick={() => mudaPaginacao(3)} />
-                </>
-            ) : actualPage < totalPages ? (
-                <>
-                    <PaginacaoButton number={actualPage - 1} onClick={() => mudaPaginacao(actualPage - 1)} />
-                    <PaginacaoButton number={actualPage} isSelected={true}  onClick={() => mudaPaginacao(actualPage)} />
-                    <PaginacaoButton number={actualPage + 1} onClick={() => mudaPaginacao(actualPage + 1)} />
-                </>
-            ) : (
-                <>
+            <div className="d-flex align-items-center justify-content-center" style={{gap: "5px"}} >
+                <FirstPage isButton onClick={() => mudaPaginacao(1)} />
+                {actualPage == 1 ? (
                     <>
-                    <PaginacaoButton number={actualPage - 2} onClick={() => mudaPaginacao(actualPage - 2)} />
-                    <PaginacaoButton number={actualPage - 1} onClick={() => mudaPaginacao(actualPage - 1)} />
-                    <PaginacaoButton number={actualPage} isSelected={true} onClick={() => mudaPaginacao(actualPage)} />
-                </>
-                </>
-            )}
-            <LastPage />
+                        <PaginacaoButton number={1} isSelected={true} onClick={() => mudaPaginacao(1)} />
+                        <PaginacaoButton number={2} onClick={() => mudaPaginacao(2)} />
+                        <PaginacaoButton number={3} onClick={() => mudaPaginacao(3)} />
+                    </>
+                ) : actualPage < totalPages ? (
+                    <>
+                        <PaginacaoButton number={actualPage - 1} onClick={() => mudaPaginacao(actualPage - 1)} />
+                        <PaginacaoButton number={actualPage} isSelected={true}  onClick={() => mudaPaginacao(actualPage)} />
+                        <PaginacaoButton number={actualPage + 1} onClick={() => mudaPaginacao(actualPage + 1)} />
+                    </>
+                ) : (
+                    <>
+                        <>
+                        <PaginacaoButton number={actualPage - 2} onClick={() => mudaPaginacao(actualPage - 2)} />
+                        <PaginacaoButton number={actualPage - 1} onClick={() => mudaPaginacao(actualPage - 1)} />
+                        <PaginacaoButton number={actualPage} isSelected={true} onClick={() => mudaPaginacao(actualPage)} />
+                    </>
+                    </>
+                )}
+                <LastPage isButton onClick={() => mudaPaginacao(totalPages)} />
+            </div>
         </div>
     )
 }

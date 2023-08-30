@@ -34,15 +34,6 @@
     src: url('assets/Fonts/Lato-Regular.ttf');
 } */
 
-a {
-    font-weight: 500;
-    color: #646cff;
-    text-decoration: inherit;
-}
-a:hover {
-    color: #535bf2;
-}
-
 html, body {
     margin: 0;
     padding: 0;
@@ -52,24 +43,20 @@ html, body {
     font-family: 'Source Sans 3', sans-serif;
 }
 
+a {
+    color: black;
+    text-decoration: none;
+}
+
 h1 {
     font-size: 3.2em;
     line-height: 1.1;
 }
 
-img {
-    user-select: none;
+p {
+    margin: 0;
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        color: #213547;
-        background-color: #ffffff;
-    }
-    a:hover {
-        color: #747bff;
-    }
-    button {
-        background-color: #f9f9f9;
-    }
+img {
+    user-select: none;
 }
