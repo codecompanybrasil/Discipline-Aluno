@@ -58,6 +58,7 @@ h2 {
     text-align: left;
 }
 
+
 .querys_avaliacao {
     width: 100%;
     display: flex;
@@ -70,8 +71,9 @@ h2 {
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     margin-top: 10px;
+    gap: 1px;
 }
 
 .header {
@@ -88,4 +90,27 @@ h2 {
     border-radius: 10px;
     left: 0;
     background-color: #56565685;
+}
+
+.filter_area {
+    flex: 0 0 20%; /* Ocupa 30% do width */
+    overflow-y: auto;
+    background-color: var(--gray);
+    /* box-shadow: 4px 0px 1px 0px rgba(0,0,0); */
+    z-index: 2;
+    position: relative;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: none; /* Inicialmente escondido */
+}
+
+.filter_area_opened{
+    display: block;
+}
+
+.filter_open {
+    width: 80%;
+    border-radius: unset;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }

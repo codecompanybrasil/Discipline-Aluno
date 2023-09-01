@@ -1,18 +1,52 @@
-import { Menu, Discipline } from '../../../Components/DcpIcons/Icon';
+import { MenuIcon, Discipline } from '../../../Components/DcpIcons/Icon';
+import Menu from '../../../Components/Menu/Menu';
 import styles from './Avaliacao.module.css'
-import React from 'react';
+import { useState, useEffect, ReactNode, CSSProperties } from 'react';
 
 type QueryAvaliacaoProps = {
     text: string,
-    icon?: React.ReactNode,
-    link?: string
+    icon?: ReactNode,
+    index: number
+    link?: string,
+    setActiveMenuIndex: (newCount: number | null) => void,
+    // setActiveMenuIndex: (index: number | null) => void;
+    isActive: boolean
 }
 
-const QueryAvaliacao = ({text, icon, link}: QueryAvaliacaoProps) => {
+const QueryAvaliacao = ({text, icon, link, setActiveMenuIndex, isActive, index}: QueryAvaliacaoProps) => {
+    const [menuStyle, setMenuStyle] = useState<CSSProperties>({ visibility: "hidden" })
+
+    if (isActive) {
+        setMenuStyle({
+            visibility: "hidden",
+        });
+    }
 
     const onClickMenu = () => {
-        console.log("menu clicked")
+        if (menuStyle.visibility == "hidden") {
+            setMenuStyle({
+                visibility: "visible"
+            })
+            console.log(`Index: ${index}`)
+        } else {
+            setMenuStyle({
+                visibility: "hidden"
+            })
+            setActiveMenuIndex(null)
+        }
     }
+
+
+    const menuOptions = [
+        {
+            text: "Resolver",
+            onClick: () => {}
+        }, 
+        {
+            text: "Saiba mais",
+            onClick: () => {}
+        }
+    ]
 
     if (!icon) {
         icon = (<Discipline />)
@@ -25,7 +59,12 @@ const QueryAvaliacao = ({text, icon, link}: QueryAvaliacaoProps) => {
                     {icon}
                     <p >{text}</p>
                 </a>
-                <Menu onClick={onClickMenu} />
+                <div style={{position: "relative"}}>
+                    <MenuIcon onClick={onClickMenu} />
+                    <div style={menuStyle} >
+                        <Menu options={menuOptions}/>
+                    </div>
+                </div>
             </div>
             <div className={styles.line}></div>
         </>

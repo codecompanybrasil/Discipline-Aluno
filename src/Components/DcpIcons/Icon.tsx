@@ -14,8 +14,11 @@ import discipline from '../../assets/IconsProva/logo.png'
 
 type clickableIcon = {
     onClick?: () => void,
-    isButton?: boolean,
-    style?: object
+    isButton?: boolean
+}
+
+const clickableIconStyle = {
+    cursor: "pointer"
 }
 
 export function Puzzle() {
@@ -34,7 +37,7 @@ export function Taskboard() {
     )
 }
 
-export function Menu({onClick = () => {}}) {
+export function MenuIcon({onClick = () => {}}) {
     return (
         <>
             <img src={menu} className={styles.icon} alt="Icon de menu" onClick={onClick} />
@@ -42,16 +45,10 @@ export function Menu({onClick = () => {}}) {
     )
 }
 
-export function Filter({onClick = () => {}, isButton, style}: clickableIcon) {
-    if (isButton) {
-        style = Object.assign({
-            cursor: "pointer"
-        }, style)
-    }
-
+export function Filter({onClick = () => {}, isButton}: clickableIcon) {
     return (
         <>
-            <img src={filter} className={styles.icon} alt="Icon de Filtro" onClick={onClick} style={style} />
+            <img src={filter} className={styles.icon} alt="Icon de Filtro" onClick={onClick} style={isButton ? clickableIconStyle : {}} />
         </>
     )
 }

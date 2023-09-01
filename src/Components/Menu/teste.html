@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .central-container {
+            display: flex;
+            height: 100vh;
+            width: 70%; /* Inicialmente ocupando 70% do width */
+            background-color: gray;
+            overflow: hidden;
+            transition: width 0.3s ease; /* Adiciona uma transição suave */
+        }
+          
+        .menu {
+            flex: 0 0 30%; /* Ocupa 30% do width */
+            background-color: red;
+            overflow-y: auto;
+            display: none; /* Inicialmente escondido */
+        }
+          
+        .content {
+            flex: 1; /* Ocupa o restante do espaço */
+            overflow-y: auto;
+        }
+          
+        .open-menu-button,
+        .close-menu-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+          
+        #openMenuButton:checked ~ .central-container {
+            width: 60%; /* Quando o botão de menu é checado, a largura muda para 60% */
+        }
+          
+        #openMenuButton:checked ~ .menu {
+            display: block; /* Mostra o menu */
+        }
+
+        /* Quando o menu está aberto */
+        .central-container.menu-open {
+            width: 60%; /* Largura reduzida para mostrar o menu */
+        }
+        
+        /* Quando o menu está aberto, exibe o menu */
+        .central-container.menu-open .menu {
+            display: block;
+        }
+  
+          
+    </style>
+</head>
+<body>
+    <div class="central-container">
+        <div class="menu" id="menu">
+            <!-- Conteúdo do menu aqui -->
+            <button class="close-menu-button" id="closeMenuButton">Fechar</button>
+        </div>
+        <div class="content">
+            <!-- Conteúdo da div central aqui -->
+            <button class="open-menu-button" id="openMenuButton">Abrir Menu</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const openMenuButton = document.getElementById("openMenuButton");
+            const closeMenuButton = document.getElementById("closeMenuButton");
+          
+            openMenuButton.addEventListener("click", function () {
+              const centralContainer = document.querySelector(".central-container");
+              centralContainer.classList.toggle("menu-open"); // Adiciona ou remove a classe para controlar a animação
+            });
+          
+            closeMenuButton.addEventListener("click", function () {
+              const centralContainer = document.querySelector(".central-container");
+              centralContainer.classList.remove("menu-open"); // Fecha o menu
+            });
+        });
+          
+    </script>
+</body>
+</html>

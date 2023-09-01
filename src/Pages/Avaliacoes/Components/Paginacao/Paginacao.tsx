@@ -1,5 +1,5 @@
 import styles from './Paginacao.module.css'
-import { FirstPage, LastPage } from '../../../Components/DcpIcons/Icon';
+import { FirstPage, LastPage } from '../../../../Components/DcpIcons/Icon';
 
 type PaginacaoButtonProps = {
     isSelected?: boolean,

@@ -1,0 +1,26 @@
+.title_filtro {
+    font-weight: bolder;
+    margin-left: 10px;
+}
+
+.header_filtro {
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.query_filtro {
+    text-align: left;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.query_filtro h3 {
+    font-weight: bold;
+}
+
+input {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    width: 210px;
+}
