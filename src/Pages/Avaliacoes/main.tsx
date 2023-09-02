@@ -37,7 +37,7 @@ const Avaliacoes = () => {
 
     // useEffect(() => onMenuClick(), [])
 
-    const menuData = [
+    const allData = [
         {
             text: "Enem - 2016",
             icon: (<Enem />),
@@ -52,6 +52,8 @@ const Avaliacoes = () => {
         }
     ]
 
+    const menuData = []
+
     return (
         <div className={styles.centralizer} >
             <div className={filterStyle}>
@@ -60,7 +62,7 @@ const Avaliacoes = () => {
             <div className={avaliacaoStyle} >
                 <HeaderAvaliacao onClick={onMenuClick} filterIconStyle={filterIconStyle} />
                 <div className={styles.querys_avaliacao} >
-                    { menuData.map((item, index) => (
+                    { allData.map((item, index) => (
                         <QueryAvaliacao 
                             key={index}
                             index={index}

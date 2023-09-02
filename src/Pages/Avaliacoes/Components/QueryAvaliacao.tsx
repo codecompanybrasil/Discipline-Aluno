@@ -1,7 +1,7 @@
 import { MenuIcon, Discipline } from '../../../Components/DcpIcons/Icon';
 import Menu from '../../../Components/Menu/Menu';
 import styles from './Avaliacao.module.css'
-import { useState, useEffect, ReactNode, CSSProperties } from 'react';
+import { useState, ReactNode, CSSProperties } from 'react';
 
 type QueryAvaliacaoProps = {
     text: string,
@@ -60,7 +60,9 @@ const QueryAvaliacao = ({text, icon, link, setActiveMenuIndex, isActive, index}:
                     <p >{text}</p>
                 </a>
                 <div style={{position: "relative"}}>
-                    <MenuIcon onClick={onClickMenu} />
+                    <div onClick={onClickMenu}>
+                        <MenuIcon />
+                    </div>
                     <div style={menuStyle} >
                         <Menu options={menuOptions}/>
                     </div>

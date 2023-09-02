@@ -13,7 +13,6 @@ import obmep from '../../assets/IconsProva/Obmep.png'
 import discipline from '../../assets/IconsProva/logo.png'
 
 type clickableIcon = {
-    onClick?: () => void,
     isButton?: boolean
 }
 
@@ -37,66 +36,51 @@ export function Taskboard() {
     )
 }
 
-export function MenuIcon({onClick = () => {}}) {
+export function MenuIcon() {
     return (
         <>
-            <img src={menu} className={styles.icon} alt="Icon de menu" onClick={onClick} />
+            <img src={menu} className={styles.icon} alt="Icon de menu" />
         </>
     )
 }
 
-export function Filter({onClick = () => {}, isButton}: clickableIcon) {
+export function Filter({isButton}: clickableIcon) {
     return (
         <>
-            <img src={filter} className={styles.icon} alt="Icon de Filtro" onClick={onClick} style={isButton ? clickableIconStyle : {}} />
+            <img src={filter} className={styles.icon} alt="Icon de Filtro" style={isButton ? clickableIconStyle : {}} />
         </>
     )
 }
 
-export function Back({onClick = () => {}}) {
+export function Back() {
     return (
         <>
-            <img src={back} className={styles.interactive_icon} alt="Icon para voltar uma página" onClick={onClick}  />
+            <img src={back} className={styles.interactive_icon} alt="Icon para voltar uma página" />
         </>
     )
 }
 
-export function Next({onClick = () => {}}) {
+export function Next() {
     return (
         <>
-            <img src={next} className={styles.interactive_icon} alt="Icon de Next" onClick={onClick}  />
+            <img src={next} className={styles.interactive_icon} alt="Icon de Next" />
         </>
     )
 }
 
-export function FirstPage({onClick = () => {}, isButton=false}: clickableIcon) {
-    let style = {}
-
-    if (isButton) {
-        style = {
-            cursor: "pointer"
-        }
-    }
-
+export function FirstPage({isButton}: clickableIcon) {
     return (
         <>
-            <img src={firstPage} className={styles.interactive_icon} alt="Icon para voltar para página inicial" onClick={onClick} style={style} />
+            <img src={firstPage} className={styles.interactive_icon} alt="Icon para voltar para página inicial" style={isButton ? clickableIconStyle : {}} />
         </>
     )
 }
 
-export function LastPage({onClick = () => {}, isButton=false}: clickableIcon) {
-    let style = {}
-
-    if (isButton) {
-        style = {
-            cursor: "pointer"
-        }
-    }
+export function LastPage({isButton}: clickableIcon) {
 
     return (
         <>
-            <img src={lastPage} className={styles.interactive_icon} alt="Icon para avançar para ultima página" onClick={onClick} style={style} />
+            <img src={lastPage} className={styles.interactive_icon} alt="Icon para avançar para ultima página" style={isButton ? clickableIconStyle : {}} />
         </>
     )
 }

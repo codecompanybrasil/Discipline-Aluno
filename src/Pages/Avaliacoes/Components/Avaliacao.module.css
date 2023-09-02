@@ -20,10 +20,6 @@
     transition: all 0.5s;
 }
 
-h2 {
-    margin: 0;
-}
-
 .query_inline p {
     margin: 0;
     text-align: left;

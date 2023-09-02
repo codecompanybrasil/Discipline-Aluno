@@ -1,86 +1,77 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .central-container {
-            display: flex;
-            height: 100vh;
-            width: 70%; /* Inicialmente ocupando 70% do width */
-            background-color: gray;
-            overflow: hidden;
-            transition: width 0.3s ease; /* Adiciona uma transição suave */
-        }
-          
-        .menu {
-            flex: 0 0 30%; /* Ocupa 30% do width */
-            background-color: red;
-            overflow-y: auto;
-            display: none; /* Inicialmente escondido */
-        }
-          
-        .content {
-            flex: 1; /* Ocupa o restante do espaço */
-            overflow-y: auto;
-        }
-          
-        .open-menu-button,
-        .close-menu-button {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-        }
-          
-        #openMenuButton:checked ~ .central-container {
-            width: 60%; /* Quando o botão de menu é checado, a largura muda para 60% */
-        }
-          
-        #openMenuButton:checked ~ .menu {
-            display: block; /* Mostra o menu */
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .year-dropdown {
+      position: relative;
+      display: inline-block;
+    }
 
-        /* Quando o menu está aberto */
-        .central-container.menu-open {
-            width: 60%; /* Largura reduzida para mostrar o menu */
-        }
-        
-        /* Quando o menu está aberto, exibe o menu */
-        .central-container.menu-open .menu {
-            display: block;
-        }
-  
-          
-    </style>
+    .year-options {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      display: none;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      max-height: 100px; /* Altura máxima fixa */
+      overflow-y: auto; /* Adiciona uma barra de rolagem vertical */
+      width: 100%;
+    }
+
+    .year-options li {
+      padding: 5px;
+      cursor: pointer;
+      white-space: nowrap; /* Evita que o texto seja quebrado */
+    }
+
+    .year-options li:hover {
+      background-color: #f0f0f0;
+    }
+  </style>
 </head>
 <body>
-    <div class="central-container">
-        <div class="menu" id="menu">
-            <!-- Conteúdo do menu aqui -->
-            <button class="close-menu-button" id="closeMenuButton">Fechar</button>
-        </div>
-        <div class="content">
-            <!-- Conteúdo da div central aqui -->
-            <button class="open-menu-button" id="openMenuButton">Abrir Menu</button>
-        </div>
-    </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const openMenuButton = document.getElementById("openMenuButton");
-            const closeMenuButton = document.getElementById("closeMenuButton");
-          
-            openMenuButton.addEventListener("click", function () {
-              const centralContainer = document.querySelector(".central-container");
-              centralContainer.classList.toggle("menu-open"); // Adiciona ou remove a classe para controlar a animação
-            });
-          
-            closeMenuButton.addEventListener("click", function () {
-              const centralContainer = document.querySelector(".central-container");
-              centralContainer.classList.remove("menu-open"); // Fecha o menu
-            });
-        });
-          
-    </script>
+  <div class="year-dropdown">
+    <input type="text" id="year-input" readonly />
+    <ul class="year-options">
+      <!-- Aqui você pode gerar dinamicamente as opções de anos em JavaScript -->
+      <!-- Adicione mais anos conforme necessário -->
+    </ul>
+  </div>
+
+  <script>
+    const yearInput = document.getElementById('year-input');
+    const yearOptions = document.querySelector('.year-options');
+    const actualYear = new Date().getFullYear()
+
+    yearInput.addEventListener('click', () => {
+      yearOptions.style.display = 'block';
+    });
+
+    yearOptions.addEventListener('click', (e) => {
+      if (e.target.tagName === 'LI') {
+        yearInput.value = e.target.textContent;
+        yearOptions.style.display = 'none';
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!yearInput.contains(e.target) && !yearOptions.contains(e.target)) {
+        yearOptions.style.display = 'none';
+      }
+    });
+    
+    window.addEventListener("load", e => {
+        for (let i=actualYear;i>actualYear-30;i--) {
+            console.log(i)
+            let li = document.createElement("li")
+            li.innerHTML = i
+            yearOptions.appendChild(li)
+        }
+    })
+  </script>
 </body>
 </html>

@@ -16,7 +16,9 @@ function HeaderAvaliacao({onClick = () => {}, filterIconStyle}: HeaderAvaliacao)
     return (
         <header className={styles.header} >
             <div style={Object.assign(filter, filterIconStyle)}>
-                <Filter isButton onClick={onClick}/>
+                <div onClick={onClick}>
+                    <Filter isButton />
+                </div>
             </div>
             <h2>Avaliações</h2>
         </header>
