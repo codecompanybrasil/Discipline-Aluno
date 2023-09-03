@@ -15,10 +15,13 @@
     --dcp-small-margin: 5px;
     --dcp-big-padding: 10px;
     --dcp-small-padding: 5px;
-    --dcp-border-width: 1px;
     --dcp-small-border-radius: 5px;
     --dcp-big-border-radius: 10px;
     
+}
+
+* {
+    -webkit-user-drag: none;
 }
 
 html, body {

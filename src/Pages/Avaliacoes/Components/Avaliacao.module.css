@@ -41,7 +41,7 @@
 } */
 
 .avaliacao {
-    background-color: var(--gray);
+    background-color: var(--dcp-gray-color);
     width: 80%;
     border-radius: 10px;
     padding: 10px;
@@ -54,9 +54,13 @@
     text-align: left;
 }
 
+.sem_resultados {
+    font-size: 1.5em;
+}
 
 .querys_avaliacao {
     width: 100%;
+    min-height: 300px;
     display: flex;
     flex-flow: column nowrap;
     position: relative;
@@ -91,7 +95,7 @@
 .filter_area {
     flex: 0 0 20%; /* Ocupa 30% do width */
     overflow-y: auto;
-    background-color: var(--gray);
+    background-color: var(--dcp-gray-color);
     /* box-shadow: 4px 0px 1px 0px rgba(0,0,0); */
     z-index: 2;
     position: relative;

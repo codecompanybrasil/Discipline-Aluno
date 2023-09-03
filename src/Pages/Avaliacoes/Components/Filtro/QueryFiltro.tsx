@@ -1,17 +1,32 @@
 import styles from './Filtro.module.css'
-import { useState, CSSProperties, MouseEventHandler } from 'react'
+import { useState, useEffect, CSSProperties, MouseEventHandler, ChangeEvent } from 'react'
 
 type QueryFiltroProps = {
     title: string,
-    typeInput: "data" | "search" | "status"
+    typeInput: "data" | "search" | "status",
+    handleData: (data: any) => void
 }
 
-const QueryFiltro = ({title, typeInput}: QueryFiltroProps) => {
+const QueryFiltro = ({title, typeInput, handleData}: QueryFiltroProps) => {
     const [yearOptionsStyle, setYearOptionsStyle] = useState<CSSProperties>({ display: "none" })
     const [yearInputValue, setYearInputValue] = useState<string>("")
     const [statusOptionsStyle, setStatusOptionsStyle] = useState<CSSProperties>({ display: "none" })
     const [statusInputValue, setStatusInputValue] = useState<string>("")
+    const [searchInputValue, setSearchInputValue] = useState<string>("")
     const actualYear = new Date().getFullYear()
+
+    useEffect(() => { //Aqui eu envio os dados do input Year
+        handleData(yearInputValue)
+    }, [yearInputValue])
+
+    useEffect(() => { //Aqui eu envio os dados do Input de Status
+        handleData(statusInputValue)
+    }, [statusInputValue])
+
+    useEffect(() => { //Aqui eu envio os dados do Input de Search
+        handleData(searchInputValue)
+    }, [searchInputValue])
+
 
     let yearsList: number[] = []
 
@@ -51,6 +66,10 @@ const QueryFiltro = ({title, typeInput}: QueryFiltroProps) => {
         }
     }
 
+    const handleSearchInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setSearchInputValue(event.target.value)
+    }
+
     return (
         <div className={styles.query_filtro} >
             <h3>{title}</h3>
@@ -66,7 +85,7 @@ const QueryFiltro = ({title, typeInput}: QueryFiltroProps) => {
                 </div>  
             ) : typeInput == "search" ? (
                 <div>
-                    <input type="search" />
+                    <input type="search" value={searchInputValue} onChange={handleSearchInputChange} />
                 </div>
             ) : typeInput == "status" ? (
                 <div className={styles.input_dropdown} >

@@ -4,16 +4,20 @@ import menu from '../../assets/Icons/Menu.png'
 import filter from '../../assets/Icons/Filter.png'
 import next from '../../assets/Icons/Next.png'
 import lastPage from '../../assets/Icons/LastPage.png'
+import lastPageDisabled from '../../assets/Icons/LastPageDisabled.png'
 import firstPage from '../../assets/Icons/FirstPage.png'
+import firstPageDisabled from '../../assets/Icons/FirstPageDisabled.png'
 import back from '../../assets/Icons/Back.png'
 import styles from './Icon.module.css'
 import enem from '../../assets/IconsProva/Enem.png'
 import mit from '../../assets/IconsProva/MIT.png';
 import obmep from '../../assets/IconsProva/Obmep.png'
 import discipline from '../../assets/IconsProva/logo.png'
+import noresults from '../../assets/Icons/NoResults.png'
 
 type clickableIcon = {
-    isButton?: boolean
+    isButton?: boolean,
+    disabled?: boolean
 }
 
 const clickableIconStyle = {
@@ -52,6 +56,14 @@ export function Filter({isButton}: clickableIcon) {
     )
 }
 
+export function NoResults() {
+    return (
+        <>
+            <img src={noresults} className={styles.icon} alt="Icon de sem resultados" />
+        </>
+    )
+}
+
 export function Back() {
     return (
         <>
@@ -68,19 +80,27 @@ export function Next() {
     )
 }
 
-export function FirstPage({isButton}: clickableIcon) {
+export function FirstPage({isButton, disabled=false}: clickableIcon) {
     return (
         <>
-            <img src={firstPage} className={styles.interactive_icon} alt="Icon para voltar para página inicial" style={isButton ? clickableIconStyle : {}} />
+            {disabled ? (
+                <img src={firstPageDisabled} className={styles.interactive_icon} alt="Icon para voltar para página inicial desativado" />
+            ) : (
+                <img src={firstPage} className={styles.interactive_icon} alt="Icon para voltar para página inicial" style={isButton ? clickableIconStyle : {}} />
+            )}
         </>
     )
 }
 
-export function LastPage({isButton}: clickableIcon) {
+export function LastPage({isButton, disabled=false}: clickableIcon) {
 
     return (
         <>
-            <img src={lastPage} className={styles.interactive_icon} alt="Icon para avançar para ultima página" style={isButton ? clickableIconStyle : {}} />
+            {disabled ? (
+                <img src={lastPageDisabled} className={styles.interactive_icon} alt="Icon para avançar para ultima página desativado" />
+            ) : (
+                <img src={lastPage} className={styles.interactive_icon} alt="Icon para avançar para ultima página" style={isButton ? clickableIconStyle : {}} />
+            )}
         </>
     )
 }
