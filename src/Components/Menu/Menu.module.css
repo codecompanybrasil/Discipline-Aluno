@@ -3,7 +3,6 @@
     border: 2px solid black;
     border-radius: 10px;
     position: absolute;
-    bottom: -100px;
     min-width: 100px;
     z-index: 5;
     right: 0;

@@ -82,6 +82,10 @@ const Avaliacoes = () => {
         setLimitedData(d)
     }
 
+    const handleSetActiveMenuIndex = (menu: number | null) => {
+        setActiveMenuIndex(menu)
+    }
+
     return (
         <div className={styles.centralizer} >
             <div className={filterStyle}>
@@ -103,8 +107,8 @@ const Avaliacoes = () => {
                             index={index}
                             text={item.text}
                             icon={item.icon}
-                            isActive={activeMenuIndex === index} // Verifica se este menu está ativo
-                            setActiveMenuIndex={setActiveMenuIndex}
+                            setActiveMenuIndex={handleSetActiveMenuIndex}
+                            activeMenuIndex={activeMenuIndex}
                         />
                     )))}
                 </div>

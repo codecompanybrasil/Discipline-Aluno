@@ -1,7 +1,7 @@
 // Menu.tsx
 
 import styles from './Menu.module.css'
-import { useState, Fragment, CSSProperties } from 'react'
+import { Fragment } from 'react'
 
 interface MenuOptionsInterface {
     text: string
@@ -27,16 +27,6 @@ function Option({text, key, onClick = () => {}}: OptionProps) {
 }
 
 function Menu({options}: MenuProps) {
-    const [screenMenuStyle, setScreenMenuStyle] = useState<CSSProperties>({ visibility: "visible" })
-
-    const onClickScreen = () => {
-        if (screenMenuStyle.visibility == "visible") {
-            setScreenMenuStyle({ visibility: "hidden" })
-        } else {
-            setScreenMenuStyle({ visibility: "visible" })
-        }
-    }
-
     return (
         <div className={styles.menu} >
             {

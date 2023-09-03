@@ -1,7 +1,7 @@
 import { MenuIcon, Discipline } from '../../../Components/DcpIcons/Icon';
 import Menu from '../../../Components/Menu/Menu';
 import styles from './Avaliacao.module.css'
-import { useState, ReactNode, CSSProperties } from 'react';
+import { useState, useEffect, useRef, ReactNode, CSSProperties } from 'react';
 
 type QueryAvaliacaoProps = {
     text: string,
@@ -10,24 +10,43 @@ type QueryAvaliacaoProps = {
     link?: string,
     setActiveMenuIndex: (newCount: number | null) => void,
     // setActiveMenuIndex: (index: number | null) => void;
-    isActive: boolean
+    activeMenuIndex: number | null
 }
 
-const QueryAvaliacao = ({text, icon, link, setActiveMenuIndex, isActive, index}: QueryAvaliacaoProps) => {
+const QueryAvaliacao = ({text, icon, link, setActiveMenuIndex, index, activeMenuIndex}: QueryAvaliacaoProps) => {
     const [menuStyle, setMenuStyle] = useState<CSSProperties>({ visibility: "hidden" })
 
-    if (isActive) {
-        setMenuStyle({
-            visibility: "hidden",
-        });
-    }
+    //Tentaiva de fazer os menus fecharem ao clickar na tela
+
+    // useEffect(() => {
+    //     const handleClickForaDoMenu = (event: MouseEvent) => {
+    //         if (menuRef.current && !menuRef.current.contains(event.target as HTMLElement) && menuStyle.visibility == "visible") {
+    //             console.log("Clicke fora do negocio")
+    //             setMenuStyle({
+    //                 visibility: "hidden"
+    //             })
+    //         }
+    //     }
+
+    //     document.addEventListener("click", handleClickForaDoMenu)
+
+    // }, [])
+
+
+    useEffect(() => {
+        if (activeMenuIndex != index) {
+            setMenuStyle({
+                visibility: "hidden"
+            })
+        }
+    }, [activeMenuIndex])
 
     const onClickMenu = () => {
         if (menuStyle.visibility == "hidden") {
             setMenuStyle({
                 visibility: "visible"
             })
-            console.log(`Index: ${index}`)
+            setActiveMenuIndex(index)
         } else {
             setMenuStyle({
                 visibility: "hidden"
@@ -64,7 +83,7 @@ const QueryAvaliacao = ({text, icon, link, setActiveMenuIndex, isActive, index}:
                         <MenuIcon />
                     </div>
                     <div style={menuStyle} >
-                        <Menu options={menuOptions}/>
+                        <Menu options={menuOptions} />
                     </div>
                 </div>
             </div>
