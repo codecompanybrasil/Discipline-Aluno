@@ -2,12 +2,12 @@ import styles from './Avaliacao.module.css'
 import { CSSProperties } from 'react'
 import { Filter } from '../../../Components/DcpIcons/Icon'
 
-type HeaderAvaliacao = {
+type HeaderAvaliacaoProps = {
     onClick: () => void,
     filterIconStyle: CSSProperties
 }
 
-function HeaderAvaliacao({onClick = () => {}, filterIconStyle}: HeaderAvaliacao) {
+function HeaderAvaliacao({onClick = () => {}, filterIconStyle}: HeaderAvaliacaoProps) {
     let filter: CSSProperties = {
         position: "absolute",
         left: "10px"
