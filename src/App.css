@@ -1,0 +1,5 @@
+.default_page {
+    background-color: var(--dcp-primary-color);
+    width: 100%;
+    height: 100%;
+}

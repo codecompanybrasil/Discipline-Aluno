@@ -1,6 +1,7 @@
-import "./assets/css/bootstrap-reboot.min.css"
-import "./assets/css/bootstrap-grid.min.css"
+import "./App.css";
+
 import AvaliacaoPage from "./Pages/Avaliacoes/AvaliacaoPage";
+
 
 function App() {
 
