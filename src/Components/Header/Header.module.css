@@ -1,0 +1,10 @@
+.header {
+    min-height: 100px;
+    padding-top: 15px;
+    padding-left: 20px;
+}
+
+.discipline_button {
+    cursor: pointer;
+    
+}

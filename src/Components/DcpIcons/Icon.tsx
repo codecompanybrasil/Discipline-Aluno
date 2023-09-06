@@ -20,6 +20,10 @@ type clickableIcon = {
     disabled?: boolean
 }
 
+type IconProps = {
+    width?: number
+}
+
 const clickableIconStyle = {
     cursor: "pointer"
 }
@@ -129,10 +133,10 @@ export function Obmep() {
     )
 }
 
-export function Discipline() {
+export function Discipline({width}: IconProps) {
     return (
         <>
-            <img src={discipline} alt="Icon do Discipline" className={styles.icon_prova} />
+            <img src={discipline} alt="Icon do Discipline" className={styles.icon_prova} style={{width: `${width}px`, height: `${width}px` }} />
         </>
     )
 }

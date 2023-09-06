@@ -1,6 +1,5 @@
 .dcp-button,
 .dcp-link {
-    font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-size: 32px;
     border-radius: 6px;
@@ -16,14 +15,14 @@
 
 .dcp-button.accent,
 .dcp-link.accent {
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    border: 5px solid var(--accent-border-color);
+    background-color: var(--dcp-accent-color);
+    color: var(--dcp-primary-color);
+    border: 5px solid var(--dcp-accent-border-color);
 }
 
 .dcp-button.primary,
 .dcp-link.primary {
-    background-color: var(--primary-color);
+    background-color: var(--dcp-primary-color);
     color: white;
-    border: 5px solid var(--primary-border-color);
+    border: 5px solid var(--dcp-primary-border-color);
 }

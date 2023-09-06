@@ -48,20 +48,23 @@ const ModalAvaliacao = () => {
     
     const fetchingAPI = () => {
         console.log(`URL: ${urlAPI}`)
-        fetch(urlAPI)
-            .then(async (response) => {
-                if (response.ok) {
-                    const text = await response.text()
-                    setData(JSON.parse(text))
-                    console.log(data)
-                }
-            })
-            .catch((error) => {
-                console.error(error)
-            })
+        // fetch(urlAPI)
+        //     .then(async (response) => {
+        //         if (response.ok) {
+        //             const text = await response.text()
+        //             setData(JSON.parse(text))
+        //             console.log(data)
+        //         }
+        //     })
+        //     .catch((error) => {
+        //         console.error(error)
+        //     })
     }
 
+    useEffect(() => fetchingAPI(), [])
+
     useEffect(() => {
+        console.log(urlAPI.searchParams.size)
         if (urlAPI.searchParams.size > 0) {
             fetchingAPI()
         }
@@ -100,7 +103,6 @@ const ModalAvaliacao = () => {
                     {data.length === 0 ? (
                         <div className="d-flex flex-column justify-content-center align-content-center">
                             <div className="w-50">
-                                <NoResults />
                                 <p className={styles.sem_resultados} >Sem resultados</p>
                             </div>
                         </div>
@@ -115,7 +117,7 @@ const ModalAvaliacao = () => {
                         />
                     )))}
                 </div>
-                <Paginacao actualPage={1} totalPages={40} urlAPI={urlAPI} handleUrlAPI={handleUrlAPI} limitsOfQueryByPage={limitOfQuerysByPage} />
+                <Paginacao actualPage={1} totalPages={Math.round(data.length / 5)} urlAPI={urlAPI} handleUrlAPI={handleUrlAPI} limitsOfQueryByPage={limitOfQuerysByPage} />
             </div>
         </div>
     )

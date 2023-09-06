@@ -2,7 +2,6 @@ import { Filter } from "../../../../Components/DcpIcons/Icon"
 import QueryFiltro from "./QueryFiltro"
 import styles from './Filtro.module.css'
 import { useEffect, useState } from "react"
-import { DataItem } from "../ModalAvaliacao"
 
 type FiltroProps = {
     onMenuClick: () => void,
