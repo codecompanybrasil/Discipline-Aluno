@@ -1,3 +1,5 @@
+@import url('@codecompanybrasil/discipline-core/dist/styles/discipline-core.min.css');
+
 * {
     -webkit-user-drag: none;
 }
