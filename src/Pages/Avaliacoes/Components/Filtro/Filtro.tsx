@@ -2,20 +2,37 @@ import { Filter } from "../../../../Components/DcpIcons/Icon"
 import QueryFiltro from "./QueryFiltro"
 import styles from './Filtro.module.css'
 import { useEffect, useState } from "react"
-import { DataItem } from "../../main"
-
 
 type FiltroProps = {
     onMenuClick: () => void,
-    handleFilterData: (d: DataItem[]) => void,
-    allData: DataItem[]
+    handleUrlAPI: (url: URL) => void,
+    urlAPI: URL
 }
 
-const Filtro = ({onMenuClick, handleFilterData, allData}: FiltroProps) => {
+const Filtro = ({onMenuClick, handleUrlAPI, urlAPI}: FiltroProps) => {
     const [searchData, setSearchData] = useState<string>("")
     const [anoData, setAnoData] = useState<number>(0)
     // const [statusData, setStatusData] = useState<boolean>()
 
+    useEffect(() => {
+        // Função para renovar a URL dos filtros
+        if (searchData) {
+            urlAPI.searchParams.set("s", searchData)
+            handleUrlAPI(urlAPI)
+            console.log("Dando o Handle na url")
+        }
+    }, [searchData]);
+
+    useEffect(() => {
+        // Função para renovar a URL dos filtros
+        if (anoData) {
+            urlAPI.searchParams.set("ano", String(anoData))
+            handleUrlAPI(urlAPI)
+            console.log("Dando o Handle na url")
+        }
+    }, [anoData]);
+
+    
     const handleSearchData = (d: string) => {
         setSearchData(d)
     }
@@ -28,25 +45,6 @@ const Filtro = ({onMenuClick, handleFilterData, allData}: FiltroProps) => {
     //     setStatusData(d)
     // }
 
-    useEffect(() => {
-        // Função para aplicar todos os filtros
-        const applyFilters = (data: DataItem[], searchData: string, anoData: number) => {
-            return data.filter((item) => {
-                const textMatch =
-                String(searchData) === "" ||
-                item.text.toLowerCase().includes(searchData) ||
-                item.text.toUpperCase().includes(searchData)
-        
-                const yearMatch = typeof item.year === "number" && String(anoData) === "" || item.year === Number(anoData);
-
-        
-                return textMatch && yearMatch;
-            });
-        };
-      
-        const filteredData = applyFilters(allData, searchData, anoData);
-        handleFilterData(filteredData);
-      }, [searchData, anoData]);
 
     return (
         <div className={`d-flex flex-column`}>

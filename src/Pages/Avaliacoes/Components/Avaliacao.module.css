@@ -42,7 +42,7 @@
 
 .avaliacao {
     background-color: var(--dcp-gray-color);
-    width: 80%;
+    width: 60%;
     border-radius: 10px;
     padding: 10px;
 }
@@ -70,6 +70,7 @@
 .centralizer {
     width: 100%;
     display: flex;
+    min-height: 500px;
     justify-content: center;
     align-items: stretch;
     margin-top: 10px;
@@ -93,7 +94,7 @@
 }
 
 .filter_area {
-    flex: 0 0 20%; /* Ocupa 30% do width */
+    flex: 0 0 15%; /* Ocupa 30% do width */
     overflow-y: auto;
     background-color: var(--dcp-gray-color);
     /* box-shadow: 4px 0px 1px 0px rgba(0,0,0); */
@@ -109,7 +110,7 @@
 }
 
 .filter_open {
-    width: 80%;
+    width: 60%;
     border-radius: unset;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;

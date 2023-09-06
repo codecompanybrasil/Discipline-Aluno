@@ -1,7 +1,6 @@
 import styles from './Paginacao.module.css'
 import { FirstPage, LastPage } from '../../../../Components/DcpIcons/Icon';
 import { useState, useEffect } from 'react';
-import { DataItem } from '../../main';
 
 type PaginacaoButtonProps = {
     isSelected?: boolean,
@@ -12,8 +11,9 @@ type PaginacaoButtonProps = {
 type PaginacaoProps = {
     actualPage: number,
     totalPages: number,
-    data: DataItem[],
-    handleLimitedData: (d: DataItem[]) => void
+    urlAPI: URL,
+    handleUrlAPI: (url: URL) => void,
+    limitsOfQueryByPage: number
 }
 
 let isSelectedStyle = {
@@ -43,26 +43,16 @@ function PaginacaoButton({isSelected, number, onClick}: PaginacaoButtonProps) {
 }
 
 
-function Paginacao({totalPages, data, handleLimitedData}: PaginacaoProps) {
+function Paginacao({totalPages, urlAPI, handleUrlAPI, limitsOfQueryByPage}: PaginacaoProps) {
     const [actualPage, setActualPage] = useState<number>(1)
-    const [firstPageStatus, setFirstPageStatus] = useState<boolean>()
-    const [lastPageStatus, setLastPageStatus] = useState<boolean>()
-
-    // let actualPage = 1
-    // let totalPages = 6
-    // useEffect(() => {
-        
-    // }, firstPageStatus)
+    const [firstPageStatus, setFirstPageStatus] = useState<boolean>() //Controla o design de First Page
+    const [lastPageStatus, setLastPageStatus] = useState<boolean>() // Controla o design de Last Page
 
     useEffect(() => {
-        let limitedData;
         console.log("Data foi alterado na paginação")
         setActualPage(1)
-        if (data.length > 5 * actualPage) {
-            
-        }
-        handleLimitedData(data)
-    }, [data])
+        
+    }, [urlAPI])
 
     useEffect(() => {
         if (actualPage == 1) {
@@ -80,6 +70,8 @@ function Paginacao({totalPages, data, handleLimitedData}: PaginacaoProps) {
 
     const mudaPaginacao = (paginacao: number) => {
         setActualPage(paginacao)
+        urlAPI.searchParams.set("offset", String(paginacao * limitsOfQueryByPage))
+        handleUrlAPI(urlAPI)
     }
 
     return (

@@ -1,12 +1,11 @@
 import "./App.css";
-
-import Avaliacoes from "./Pages/Avaliacoes/main";
+import AvaliacaoPage from "./Pages/Avaliacoes/AvaliacaoPage";
 
 function App() {
 
 	return (
 		<>
-			<Avaliacoes />
+			<AvaliacaoPage />
 		</>
 	);
 }

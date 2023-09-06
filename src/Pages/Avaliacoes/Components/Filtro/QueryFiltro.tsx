@@ -85,7 +85,7 @@ const QueryFiltro = ({title, typeInput, handleData}: QueryFiltroProps) => {
                 </div>  
             ) : typeInput == "search" ? (
                 <div>
-                    <input type="search" value={searchInputValue} onChange={handleSearchInputChange} />
+                    <input type="search" value={searchInputValue} onChange={handleSearchInputChange} maxLength={150} />
                 </div>
             ) : typeInput == "status" ? (
                 <div className={styles.input_dropdown} >
