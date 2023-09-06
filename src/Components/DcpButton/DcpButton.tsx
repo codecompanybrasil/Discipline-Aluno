@@ -1,5 +1,4 @@
 import React from 'react';
-import './DcpButton.css';
 
 type ButtonTypes = "link" | "button"
 type ButtonColors = "primary" | "secondary" | "accent" | "danger" | "success"
