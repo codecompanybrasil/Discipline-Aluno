@@ -1,12 +1,13 @@
 import ModalAvaliacao from "./Components/ModalAvaliacao"
 import Header from "../../Components/Header/Header"
-import DcpButton from "../../Components/DcpButton/DcpButton"
+
+import { DcpButton } from "@codecompanybrasil/discipline-core";
 
 function AvaliacaoPage() {
     return (
         <div className="default_page">
             <Header />
-            <div style={{marginTop: "100px"}}>
+            <div style={{ marginTop: "100px" }}>
                 <div>
                     <ModalAvaliacao />
                 </div>
