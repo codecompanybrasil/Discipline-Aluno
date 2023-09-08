@@ -1,33 +1,16 @@
-import puzzle from '../../assets/Icons/Puzzle.png'
-import taskboard from '../../assets/Icons/Taskboard.png'
-import menu from '../../assets/Icons/Menu.png'
-import filter from '../../assets/Icons/Filter.png'
-import next from '../../assets/Icons/Next.png'
-import lastPage from '../../assets/Icons/LastPage.png'
-import lastPageDisabled from '../../assets/Icons/LastPageDisabled.png'
-import firstPage from '../../assets/Icons/FirstPage.png'
-import firstPageDisabled from '../../assets/Icons/FirstPageDisabled.png'
-import back from '../../assets/Icons/Back.png'
 import styles from './Icon.module.css'
+import puzzle from '../../assets/icons/Puzzle.png'
+import taskboard from '../../assets/icons/Taskboard.png'
+import menu from '../../assets/icons/Menu.png'
 import enem from '../../assets/IconsProva/Enem.png'
 import mit from '../../assets/IconsProva/MIT.png';
 import obmep from '../../assets/IconsProva/Obmep.png'
 import discipline from '../../assets/IconsProva/logo.png'
-import noresults from '../../assets/Icons/NoResults.png'
-
-type clickableIcon = {
-    isButton?: boolean,
-    disabled?: boolean
-}
+import noresults from '../../assets/icons/NoResults.png'
 
 type IconProps = {
     width?: number
 }
-
-const clickableIconStyle = {
-    cursor: "pointer"
-}
-
 export function Puzzle() {
     return (
         <>
@@ -52,59 +35,10 @@ export function MenuIcon() {
     )
 }
 
-export function Filter({isButton}: clickableIcon) {
-    return (
-        <>
-            <img src={filter} className={styles.icon} alt="Icon de Filtro" style={isButton ? clickableIconStyle : {}} />
-        </>
-    )
-}
-
 export function NoResults() {
     return (
         <>
             <img src={noresults} className={styles.icon} alt="Icon de sem resultados" />
-        </>
-    )
-}
-
-export function Back() {
-    return (
-        <>
-            <img src={back} className={styles.interactive_icon} alt="Icon para voltar uma página" />
-        </>
-    )
-}
-
-export function Next() {
-    return (
-        <>
-            <img src={next} className={styles.interactive_icon} alt="Icon de Next" />
-        </>
-    )
-}
-
-export function FirstPage({isButton, disabled=false}: clickableIcon) {
-    return (
-        <>
-            {disabled ? (
-                <img src={firstPageDisabled} className={styles.interactive_icon} alt="Icon para voltar para página inicial desativado" />
-            ) : (
-                <img src={firstPage} className={styles.interactive_icon} alt="Icon para voltar para página inicial" style={isButton ? clickableIconStyle : {}} />
-            )}
-        </>
-    )
-}
-
-export function LastPage({isButton, disabled=false}: clickableIcon) {
-
-    return (
-        <>
-            {disabled ? (
-                <img src={lastPageDisabled} className={styles.interactive_icon} alt="Icon para avançar para ultima página desativado" />
-            ) : (
-                <img src={lastPage} className={styles.interactive_icon} alt="Icon para avançar para ultima página" style={isButton ? clickableIconStyle : {}} />
-            )}
         </>
     )
 }

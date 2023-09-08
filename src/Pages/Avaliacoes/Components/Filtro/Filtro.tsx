@@ -1,7 +1,8 @@
-import { Filter } from "../../../../Components/DcpIcons/Icon"
-import QueryFiltro from "./QueryFiltro"
-import styles from './Filtro.module.css'
 import { useEffect, useState } from "react"
+import { DcpIcon, DcpIconButton } from "@codecompanybrasil/discipline-core"
+import styles from './Filtro.module.css'
+
+import QueryFiltro from "./QueryFiltro"
 
 type FiltroProps = {
     onMenuClick: () => void,
@@ -9,7 +10,7 @@ type FiltroProps = {
     urlAPI: URL
 }
 
-const Filtro = ({onMenuClick, handleUrlAPI, urlAPI}: FiltroProps) => {
+const Filtro = ({ onMenuClick, handleUrlAPI, urlAPI }: FiltroProps) => {
     const [searchData, setSearchData] = useState<string>("")
     const [anoData, setAnoData] = useState<number>(0)
     // const [statusData, setStatusData] = useState<boolean>()
@@ -32,7 +33,6 @@ const Filtro = ({onMenuClick, handleUrlAPI, urlAPI}: FiltroProps) => {
         }
     }, [anoData]);
 
-    
     const handleSearchData = (d: string) => {
         setSearchData(d)
     }
@@ -45,12 +45,13 @@ const Filtro = ({onMenuClick, handleUrlAPI, urlAPI}: FiltroProps) => {
     //     setStatusData(d)
     // }
 
-
     return (
         <div className={`d-flex flex-column`}>
-            <div className={`${styles.header_filtro} d-flex align-items-center mt-1`} style={{marginLeft: "10px"}} >
-                <div onClick={onMenuClick}>
-                    <Filter isButton/>
+            <div className={`${styles.header_filtro} d-flex align-items-center mt-1`} style={{ marginLeft: "10px" }} >
+                <div>
+                    <DcpIconButton onClick={onMenuClick}>
+                        <DcpIcon.Filter />
+                    </DcpIconButton>
                 </div>
                 <h2 className={styles.title_filtro} >Filtros</h2>
             </div>

@@ -1,6 +1,6 @@
-import styles from './Paginacao.module.css'
-import { FirstPage, LastPage } from '../../../../Components/DcpIcons/Icon';
 import { useState, useEffect } from 'react';
+import { DcpIcon, DcpIconButton } from "@codecompanybrasil/discipline-core";
+import styles from './Paginacao.module.css'
 
 type PaginacaoButtonProps = {
     isSelected?: boolean,
@@ -26,7 +26,7 @@ let unSelectedStyle = {
     backgroundColor: "white"
 }
 
-function PaginacaoButton({isSelected, number, onClick}: PaginacaoButtonProps) {
+function PaginacaoButton({ isSelected, number, onClick }: PaginacaoButtonProps) {
     let buttonStyle;
 
     if (isSelected) {
@@ -42,8 +42,7 @@ function PaginacaoButton({isSelected, number, onClick}: PaginacaoButtonProps) {
     )
 }
 
-
-function Paginacao({totalPages, urlAPI, handleUrlAPI, limitsOfQueryByPage}: PaginacaoProps) {
+function Paginacao({ totalPages, urlAPI, handleUrlAPI, limitsOfQueryByPage }: PaginacaoProps) {
     const [actualPage, setActualPage] = useState<number>(1)
     const [firstPageStatus, setFirstPageStatus] = useState<boolean>() //Controla o design de First Page
     const [lastPageStatus, setLastPageStatus] = useState<boolean>() // Controla o design de Last Page
@@ -51,7 +50,7 @@ function Paginacao({totalPages, urlAPI, handleUrlAPI, limitsOfQueryByPage}: Pagi
     useEffect(() => {
         console.log("Data foi alterado na paginação")
         setActualPage(1)
-        
+
     }, [urlAPI])
 
     useEffect(() => {
@@ -60,12 +59,11 @@ function Paginacao({totalPages, urlAPI, handleUrlAPI, limitsOfQueryByPage}: Pagi
             setLastPageStatus(false)
         } else if (actualPage < totalPages) {
             setFirstPageStatus(false)
-            setLastPageStatus(false) 
+            setLastPageStatus(false)
         } else {
             setFirstPageStatus(false)
             setLastPageStatus(true)
         }
-        
     }, [actualPage])
 
     const mudaPaginacao = (paginacao: number) => {
@@ -78,9 +76,13 @@ function Paginacao({totalPages, urlAPI, handleUrlAPI, limitsOfQueryByPage}: Pagi
         <>
             {totalPages > 1 ? (
                 <div className={styles.paginacao} >
-                    <div className="d-flex align-items-center justify-content-center" style={{gap: "5px"}} >
-                        <div onClick={() => mudaPaginacao(1)}>
-                            <FirstPage isButton disabled={firstPageStatus}/>
+                    <div className="d-flex align-items-center justify-content-center" style={{ gap: "5px" }} >
+                        <div>
+                            <DcpIconButton onClick={() => mudaPaginacao(1)}>
+                                {firstPageStatus && <DcpIcon.FirstPage />}
+                                {!firstPageStatus && <DcpIcon.FirstPage />}
+                            </DcpIconButton>
+                            {/* <FirstPage isButton disabled={firstPageStatus}/> */}
                         </div>
                         {actualPage == 1 ? (
                             <>
@@ -93,7 +95,7 @@ function Paginacao({totalPages, urlAPI, handleUrlAPI, limitsOfQueryByPage}: Pagi
                         ) : actualPage < totalPages ? (
                             <>
                                 <PaginacaoButton number={actualPage - 1} onClick={() => mudaPaginacao(actualPage - 1)} />
-                                <PaginacaoButton number={actualPage} isSelected={true}  onClick={() => mudaPaginacao(actualPage)} />
+                                <PaginacaoButton number={actualPage} isSelected={true} onClick={() => mudaPaginacao(actualPage)} />
                                 <PaginacaoButton number={actualPage + 1} onClick={() => mudaPaginacao(actualPage + 1)} />
                             </>
                         ) : (
@@ -105,8 +107,12 @@ function Paginacao({totalPages, urlAPI, handleUrlAPI, limitsOfQueryByPage}: Pagi
                                 <PaginacaoButton number={actualPage} isSelected={true} onClick={() => mudaPaginacao(actualPage)} />
                             </>
                         )}
-                        <div onClick={() => mudaPaginacao(totalPages)}>
-                            <LastPage isButton disabled={lastPageStatus} />
+                        <div>
+                            <DcpIconButton onClick={() => mudaPaginacao(totalPages)}>
+                                {lastPageStatus && <DcpIcon.LastPage />}
+                                {!lastPageStatus && <DcpIcon.LastPage />}
+                            </DcpIconButton>
+                            {/* <LastPage isButton disabled={lastPageStatus} /> */}
                         </div>
                     </div>
                 </div>
