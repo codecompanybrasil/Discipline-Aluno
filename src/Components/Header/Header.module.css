@@ -1,10 +1,23 @@
 .header {
     min-height: 100px;
     padding-top: 15px;
-    padding-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
 }
 
 .discipline_button {
     cursor: pointer;
-    
+    padding-left: 20px;
+    position: absolute;
+    left: 0;
+}
+
+.title {
+    text-align: center;
+    font-size: 3.5em;
+    color: var(--dcp-white-color);
+    /* font-family: var(--dcp-primary-font); */
 }

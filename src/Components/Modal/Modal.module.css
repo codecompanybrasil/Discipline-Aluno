@@ -1,0 +1,15 @@
+.modal {
+    background-color: var(--dcp-gray-color);
+    border-radius: 10px;
+    width: 60%;
+    min-height: 200px;
+    padding: 10px;
+    padding-bottom: 20px;
+}
+
+.modal_centralizer {
+    display: flex;
+    width: 100%;
+    margin-top: 50px;
+    justify-content: center;
+}

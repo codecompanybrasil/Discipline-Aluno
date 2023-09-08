@@ -1,0 +1,10 @@
+.logo {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.complete_logo {
+    width: 500px;
+    height: auto;
+}
