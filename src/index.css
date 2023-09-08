@@ -1,5 +1,10 @@
 @import url('@codecompanybrasil/discipline-core/dist/styles/discipline-core.min.css');
 
+html, body, #root {
+    width: 100% !important;
+    height: 100% !important;
+}
+
 * {
     -webkit-user-drag: none;
 }
