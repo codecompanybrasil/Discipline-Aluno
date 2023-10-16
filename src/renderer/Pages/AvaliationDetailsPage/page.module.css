@@ -1,0 +1,13 @@
+.content_avaliacoes {
+    display: flex;
+    gap: 50px;
+    
+}
+
+span {
+    font-size: 1.1em;
+}
+
+.query_details {
+    margin-top: 20px;
+}

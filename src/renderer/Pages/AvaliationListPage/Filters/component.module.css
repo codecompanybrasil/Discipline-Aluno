@@ -1,0 +1,57 @@
+.header {
+    display: flex;
+    margin-top: -20px;
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+    background-color: var(--dcp-heavy-gray-color);
+}
+
+.query_filtro {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.filter_btn {
+    padding-left: 0;
+}
+
+.title_filtro {
+    font-size: 2em;
+}
+
+.input_options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    width: 210px !important;
+    display: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    max-height: 100px;
+    /* Altura máxima fixa */
+    overflow-y: auto;
+    /* Adiciona uma barra de rolagem vertical */
+    width: 100%;
+    z-index: 10;
+}
+
+.input_options li {
+    padding: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+    /* Evita que o texto seja quebrado */
+}
+
+.input_options li:hover {
+    background-color: #f0f0f0;
+}
+
+.input_dropdown {
+    position: relative;
+    display: inline-block;
+}

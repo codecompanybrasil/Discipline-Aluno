@@ -1,0 +1,28 @@
+.dcp-button {
+    font-family: var(--dcp-primary-font);
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: var(--dcp-border-radius-sm);
+    padding: 0.6rem;
+    margin: 2px 4px;
+    cursor: pointer;
+    line-height: 1.5;
+    align-items: center;
+    user-select: none;
+
+    border-width: var(--dcp-border-width-sm);
+    border-style: solid;
+}
+
+.dcp-button .slot {
+    display: flex;
+    align-items: center;
+}
+
+.dcp-button .slot-start {
+    margin-right: 6px;
+}
+
+.dcp-button .slot-end {
+    margin-left: 6px;
+}

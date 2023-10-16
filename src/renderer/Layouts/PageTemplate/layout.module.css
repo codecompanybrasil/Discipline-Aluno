@@ -1,0 +1,23 @@
+.layout_container {
+    display: grid;
+    grid-template-rows: auto 1fr 120px;
+    height: 100vh;
+}
+
+.panel {
+    margin: 0 auto;
+    background-color: var(--dcp-gray-color);
+    position: relative;
+    overflow-x: hidden;
+}
+
+.panel_inner {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+@media (min-width: 576px) {
+    .panel {
+        border-radius: 10px;
+    }
+ }

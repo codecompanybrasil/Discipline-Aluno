@@ -1,0 +1,31 @@
+.title {
+    color: var(--dcp-white-color);
+    text-align: center;
+    margin: 0.3em 0;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .title {
+        margin: 0.5em 0 0.3em;
+    }
+}
+
+.dcp_icon_area {
+    display: flex;
+    align-items: center;
+}
+
+.beta {
+    margin-left: 4px;
+    padding: 10px;
+    background-color: #A469FE;
+    color: var(--dcp-white-color);
+    user-select: none;
+    font-size: 1.5em;
+    border: 5px solid #8B3AED;
+    border-radius: 10px;
+    line-height: 1;
+}
+
+/* background-color: rgba(0,0,0,0.5); */
