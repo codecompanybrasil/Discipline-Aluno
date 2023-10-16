@@ -1,0 +1,46 @@
+.radio_alternative {
+    width: 25px;
+    height: 25px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: var(--dcp-white-color);
+    border: 1px solid black;
+    border-radius: 5px;
+
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.radio_alternative:disabled {
+    color: var(--dcp-black-color);
+}
+
+.radio_alternative.selected {
+    background-color: var(--dcp-accent-color);
+}
+
+.radio_alternative.correct {
+    background-color: var(--dcp-success-color);
+    cursor: default;
+}
+
+.radio_alternative.wrong {
+    background-color: var(--dcp-danger-color);
+    cursor: default;
+}
+
+.image {
+    max-width: 100%;
+}
+
+.response {
+    font-weight: bolder;
+    font-size: 1.2em;
+    word-wrap: break-word;
+    hyphens: auto;
+}

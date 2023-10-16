@@ -1,0 +1,47 @@
+.modal {
+    background-color: var(--dcp-gray-color);
+    border-radius: 10px;
+    width: 60%;
+    min-height: 500px;
+    padding: 15px;
+}
+
+.modal_centralizer {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.content_avaliacoes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.description_title {
+    font-size: 2em !important;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.content_avaliacoes {
+    display: flex;
+    gap: 50px;
+    
+}
+
+.img_detail_area {
+    max-width: 300px;
+    min-width: 150px;
+    max-height: 300px;
+}
+
+span {
+    font-size: 1.1em;
+}
+
+.query_details {
+    margin-top: 20px;
+}

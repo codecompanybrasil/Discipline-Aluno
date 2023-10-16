@@ -1,0 +1,29 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 10px 0;
+}
+
+.pagination_button {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    color: var(--dcp-black-color);
+    background-color: var(--dcp-white-color);
+    border-radius: var(--dcp-border-radius-sm);
+
+    -webkit-user-select: none;
+    user-select: none;
+    line-height: initial;
+}
+
+.pagination_button:not(:disabled) {
+    cursor: pointer;
+}
+
+.selected {
+    color: white;
+    background-color: black;
+}

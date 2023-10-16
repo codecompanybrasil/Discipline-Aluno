@@ -1,22 +1,58 @@
 {
-  "name": "discipline",
+  "name": "discipline-app",
+  "productName": "discipline-app",
   "version": "1.0.0",
-  "description": "Ferramenta para ajudar professores a melhorar suas aulas",
-  "main": "main.js",
+  "private": true,
+  "description": "Aplicativo de educação Discipline",
+  "main": ".webpack/main",
   "scripts": {
-    "start": "npx electron ."
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "eslint --ext .ts,.tsx ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/codecompanybrasil/Discipline.git"
+  "keywords": [],
+  "author": {
+    "name": "Guilherme Cadilhe",
+    "email": "guilhermegcadilhe@gmail.com"
   },
-  "author": "",
   "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/codecompanybrasil/Discipline/issues"
+  "devDependencies": {
+    "@electron-forge/cli": "^6.4.2",
+    "@electron-forge/maker-deb": "^6.4.2",
+    "@electron-forge/maker-rpm": "^6.4.2",
+    "@electron-forge/maker-squirrel": "^6.4.2",
+    "@electron-forge/maker-zip": "^6.4.2",
+    "@electron-forge/plugin-auto-unpack-natives": "^6.4.2",
+    "@electron-forge/plugin-webpack": "^6.4.2",
+    "@types/dompurify": "^3.0.2",
+    "@types/react": "^18.2.25",
+    "@types/react-dom": "^18.2.10",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "@vercel/webpack-asset-relocator-loader": "1.7.3",
+    "css-loader": "^6.0.0",
+    "electron": "26.3.0",
+    "eslint": "^8.0.1",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.25.0",
+    "file-loader": "^6.2.0",
+    "fork-ts-checker-webpack-plugin": "^7.2.13",
+    "node-loader": "^2.0.0",
+    "style-loader": "^3.0.0",
+    "ts-loader": "^9.2.2",
+    "ts-node": "^10.0.0",
+    "typescript": "~4.5.4",
+    "url-loader": "^4.1.1"
   },
-  "homepage": "https://github.com/codecompanybrasil/Discipline#readme",
   "dependencies": {
-    "electron": "^25.1.0"
+    "@codecompanybrasil/discipline-core": "^1.0.19",
+    "dayjs": "^1.11.10",
+    "dompurify": "^3.0.5",
+    "electron-squirrel-startup": "^1.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.16.0"
   }
 }

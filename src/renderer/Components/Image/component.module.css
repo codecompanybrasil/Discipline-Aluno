@@ -1,0 +1,8 @@
+.image {
+    max-width: 100%;
+}
+
+.placeholder {
+    padding: 10px;
+    background-color: var(--dcp-primary-color);
+}
