@@ -27,7 +27,7 @@ function AvaliationListPage() {
   const [itemsPerPage, setItemsPerPage] = useState<number>(10);
   const [loading, setLoading] = useState<boolean>(true);
   const [urlAPI, setUrlAPI] = useState<URL>(
-    new URL(`http://api.discipline.app.br/avaliations?offset=0&limit=${itemsPerPage}`)
+    new URL(`https://api.discipline.app.br/avaliations?offset=0&limit=${itemsPerPage}`)
   );
 
   const fetchingAPI = () => {

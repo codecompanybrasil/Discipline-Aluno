@@ -22,7 +22,7 @@ function AvaliationPage() {
   const numQuestoesCertas = useRef<number>(0);
 
   const fetchingAPI = () => {
-    fetch(`http://api.discipline.app.br/avaliations/${hash}/export`)
+    fetch(`https://api.discipline.app.br/avaliations/${hash}/export`)
       .then(async (response) => {
         if (response.ok) {
           const resData = await response.json();
