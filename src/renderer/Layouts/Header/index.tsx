@@ -1,7 +1,7 @@
 // import { useState, useEffect } from "react";
 
 import DisciplineLogo from "@/Components/DisciplineLogo";
-
+import { Link } from 'react-router-dom'
 import styles from "./component.module.css";
 
 type HeaderProps = {
@@ -9,7 +9,6 @@ type HeaderProps = {
 };
 
 function Header({ title }: HeaderProps) {
-
     // const [hrefDisciplineButton, setHrefDisciplineButton] =
     //     useState<string>("/");
 
@@ -26,9 +25,9 @@ function Header({ title }: HeaderProps) {
         <header className="row align-items-center">
             <div className="d-flex col-12 justify-content-center col-md-3 justify-content-md-start col-xl-2">
                 <div className={styles.dcp_icon_area}>
-                    <a href="/" className={styles.discipline_button}>
+                    <Link to="/" className={styles.discipline_button}>
                         <DisciplineLogo />
-                    </a>
+                    </Link>
                     <div className={styles.beta}>Beta</div>
                 </div>
             </div>

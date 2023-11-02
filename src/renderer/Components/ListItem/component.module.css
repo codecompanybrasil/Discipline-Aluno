@@ -1,19 +1,22 @@
 .query_line {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     position: relative;
 }
 
+.query_line:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
 .query_inline {
+    width: 100%;
     display: flex;
-    font-size: 25px;
-    font-weight: bolder;
-    justify-content: center;
     align-items: center;
-    padding: 10px;
     gap: 10px;
-    position: relative;
+    padding: 10px;
+
+    font-weight: bold;
+    font-size: 25px;
     transition: all 0.5s;
 }
 
@@ -49,4 +52,8 @@
     border-radius: 10px;
     left: 0;
     background-color: #56565685;
+}
+
+.menu_container {
+    display: none;
 }

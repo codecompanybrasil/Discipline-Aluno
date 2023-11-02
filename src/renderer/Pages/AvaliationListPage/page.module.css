@@ -5,18 +5,18 @@
 
 .querys_avaliacao {
     width: 100%;
-    min-height: 300px;
     display: flex;
     flex-flow: column nowrap;
-    position: relative;
     margin-top: 10px;
+    margin-bottom: 70px;
 }
 
 .filter_area {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     background-color: var(--dcp-gray-color);
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+    box-shadow:
+        rgba(17, 17, 26, 0.1) 0px 8px 24px,
         rgba(17, 17, 26, 0.1) 0px 16px 56px,
         rgba(17, 17, 26, 0.1) 0px 24px 80px;
 

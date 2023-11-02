@@ -1,0 +1,53 @@
+@import url("@codecompanybrasil/discipline-core/dist/styles/discipline-core.min.css");
+
+body {
+    background-color: var(--dcp-primary-color);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+img {
+    pointer-events: none;
+}
+
+/* TODO: Remover após atualização do Discipline-core */
+
+:root {
+    --dcp-heavy-gray-color: #929292;
+}
+
+.dcp-button {
+    font-size: 1.2em;
+    line-height: 1.2em;
+}
+
+.dcp-icon-button .dcp-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.dcp-button.full-width {
+    justify-content: center;
+}
+
+.btn-group {
+    display: flex;
+}
+
+.btn-group .dcp-icon-button {
+    margin: 0;
+}
+
+p,
+h2 {
+    margin-bottom: inherit;
+    margin-block-start: 0;
+    margin-top: 0;
+}
+
+/* Fim do FIX */

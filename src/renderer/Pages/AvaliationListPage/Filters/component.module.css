@@ -1,8 +1,8 @@
 .header {
     display: flex;
     margin-top: -20px;
-    margin-right: calc(-.5 * var(--bs-gutter-x));
-    margin-left: calc(-.5 * var(--bs-gutter-x));
+    margin-right: calc(-0.5 * var(--bs-gutter-x));
+    margin-left: calc(-0.5 * var(--bs-gutter-x));
     background-color: var(--dcp-heavy-gray-color);
 }
 

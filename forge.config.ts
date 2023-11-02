@@ -19,17 +19,15 @@ const config: ForgeConfig = {
     new AutoUnpackNativesPlugin({}),
     new WebpackPlugin({
       mainConfig,
-      // devContentSecurityPolicy:
-      //   "default-src 'self' 'unsafe-eval' 'unsafe-inline' http://localhost:* ws://localhost:* http://api.discipline.app.br;",
-      devContentSecurityPolicy:
-        "default-src * self ws: blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * ws: 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;",
+      devContentSecurityPolicy: "default-src 'self' 'unsafe-eval' 'unsafe-inline' http://localhost:* ws://localhost:* http://api.discipline.app.br;",
+      // devContentSecurityPolicy: "default-src * self ws: blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * ws: 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;",
       renderer: {
         config: rendererConfig,
         entryPoints: [
           {
             html: "./src/renderer/html/index.html",
             js: "./src/renderer/renderer.ts",
-            name: "main_window",
+            name: "main_window", //main_window
             preload: {
               js: "./src/main/preload.ts",
             },
